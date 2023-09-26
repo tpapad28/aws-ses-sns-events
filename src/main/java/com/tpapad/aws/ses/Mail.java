@@ -1,7 +1,9 @@
 package com.tpapad.aws.ses;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 import lombok.Data;
+import lombok.ToString;
 
 /**
  *
@@ -10,25 +12,45 @@ import lombok.Data;
 @Data
 public class Mail {
 
-    String timestamp;
+    private ZonedDateTime timestamp;
 
-    String messageId;
+    private String messageId;
 
-    String source;
+    private String source;
 
-    String sourceArn;
+    private String sourceArn;
 
-    String sourceIp;
+    private String sourceIp;
 
-    String sendingAccountId;
+    private String sendingAccountId;
 
-    String callerIdentity;
+    private String callerIdentity;
 
-    List<String> destination;
+    private List<String> destination;
 
-    boolean headersTruncated;
+    private boolean headersTruncated;
 
-    Object headers;
+    private List<Header> headers;
 
-    Object commonHeaders;
+    private CommonHeaders commonHeaders;
+
+    @Data
+    static class Header {
+
+        private String name;
+        private String value;
+
+    }
+
+    @Data
+    @ToString
+    static class CommonHeaders {
+
+        private List<String> from;
+        private String date;
+        private List<String> to;
+        private String messageId;
+        private String subject;
+
+    }
 }

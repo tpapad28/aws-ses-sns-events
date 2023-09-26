@@ -1,5 +1,6 @@
 package com.tpapad.aws.ses;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 import lombok.Data;
 
@@ -10,17 +11,17 @@ import lombok.Data;
 @Data
 public class Complaint {
 
-    List<ComplainedRecipient> complainedRecipients;
+    private List<ComplainedRecipient> complainedRecipients;
 
-    String timestamp;
+    private ZonedDateTime timestamp;
 
-    String feedbackId;
+    private String feedbackId;
 
-    String complaintSubType;
+    private String complaintSubType;
 
-    String userAgent;
+    private String userAgent;
 
-    String complaintFeedbackType;
+    private String complaintFeedbackType;
 
-    String arrivalDate;
+    private String arrivalDate;
 }

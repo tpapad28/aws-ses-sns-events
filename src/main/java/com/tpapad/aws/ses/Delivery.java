@@ -1,5 +1,6 @@
 package com.tpapad.aws.ses;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 import lombok.Data;
 
@@ -10,16 +11,16 @@ import lombok.Data;
 @Data
 public class Delivery {
 
-    String timestamp;
+    private ZonedDateTime timestamp;
 
-    long processingTimeMillis;
+    private long processingTimeMillis;
 
-    List<String> recipients;
+    private List<String> recipients;
 
-    String smtpResponse;
+    private String smtpResponse;
 
-    String reportingMTA;
+    private String reportingMTA;
 
-    String remoteMtaIp;
+    private String remoteMtaIp;
 
 }
